@@ -1,5 +1,41 @@
 <?php
+include 'database.php';
+// initializing color array
+$colors["basketball"] = "orange";
+$colors["football"] = "brown";
+$colors["hockey"] = "black";
+$colors["soccer"] = "blue";
 
+//getting GET variables
+$pname = $_GET["playerName"];
+$cname = $_GET["categoryName"];
+$hasName = $pname != "" && $pname != null;
+$hasSport = $cname != "All Sports" && $cname != "" && $cname != NULL;
+
+if($hasName && $hasSport){
+    $sql = "SELECT player_id, player_name, player_team, price, image, sport FROM Jersey WHERE player_name LIKE '%$pname%' AND sport = $cname";
+    $filter = "<h3>Players named '".$pname."' in: '".$cname."'</h3>";
+}elseif($hasName && !$hasSport){
+    $sql = "SELECT player_id, player_name, player_team, price, image, sport FROM Jersey WHERE player_name LIKE '%$pname%'";
+    $filter = "<h3>Players named '".$pname."'</h3>";
+}elseif(!$hasName && $hasSport){
+    $sql = "SELECT player_id, player_name, player_team, price, image, sport FROM Jersey WHERE sport = '$cname'";
+    $filter = "<h3>Players in: '".$cname."'</h3>";
+}  else {
+    $sql = "SELECT player_id, player_name, player_team, price, image, sport FROM Jersey";
+    $filter ='<h3>All Players</h3>';
+}
+
+$result = mysqli_query($con, $sql) or die(mysqli_error($con));
+//essentially creating the columns for the table data
+while ($data = mysqli_fetch_assoc($result)){
+    $names[] = $data["player_name"];
+    $teams[] = $data["player_team"];
+    $pid[] = $data["player_id"];
+    $prices[] = $data["price"];
+    $imgurl[]= $data["image"];
+    $sport[] = $data["sport"];
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,6 +47,7 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
 </head>
 <body>
 <div class="container-fluid twopiece">
@@ -30,6 +67,18 @@ h1 {
 				font-weight: 500;
 				line-height: 26.4px;
 			}
+ #suggest{
+         border: 1px solid grey;
+         border-radius: 2%;
+         width: 52%;
+         height: 50%;
+         padding-left: 0;
+         position: relative;
+         left: 13.9%;
+         
+         z-index: 10;
+}
+
 </style>
 
 </div>
@@ -60,8 +109,8 @@ h1 {
 
 
 	<h2>Browse Products by Sport or Search by Name:</h2>
-<div class="container">
-	<form class="form-inline" method="get" action="listprod.jsp">
+<div class="container-fluid">
+    <form class="form-inline" method="get" action="listprod.php">
 		 <div class="form-group">
          <select class="form-control"size="1" name="categoryName">
 			  <option>All Sports</option>
@@ -72,12 +121,37 @@ h1 {
 			  </select>
 			</div>
 			<div class="form-group">  
-			  <input class="form-control" type="text" name="PlayerName" placeholder="Search" size="50">
+			  <input class="form-control" type="text" name="playerName" placeholder="Search" size="50">
 			</div>     
-			  <input class="btn btn-primary"type="submit" value="Search">
+			  <input class="btn btn-primary"type="submit" name="submit" value="Search">
+                          <div id="suggest"> 
+                              <ul id="theList">
+                                  <li>yo</li><br>
+                                  <li>yo yo</li><br>
+                                  <li>yo yo yo</li><br>
+                              </ul>
+                          </div>
 			</form>
-			<div class="container-fluid">
-              		</div>
+                        
+                        
+                       
+			
+            
+                <?php echo $filter;?>
+                <font face="Century Gothic" size="3"><table class="table" ><tr><th></th><th> </th>
+                <th>Price</th><th>Player Name</th><th>Team</th></tr>
+               <?php 
+                for($i = 0; $i < count($names); $i++){
+                    $font_color = $colors[$sport[$i]];
+                    echo '<tr><td ><a href="addcart.php?id='.$pid[$i].'&name='.$names[$i].'&team='.$teams[$i].'&price='.
+                          $prices[$i].'&imageDir='.$imgurl[$i].'">Add to Cart</a></td>';
+                    
+                    echo '<td><img src="jerseys/'.$imgurl[$i].'"alt="Jersey" style="width:150px;height:120px;"></td>';
+                    echo '<td><font color="'.$font_color.'">$'.$prices[$i].'</font></td><td><font color="'.$font_color;
+                    echo '">'.$names[$i].'</font></td><td><font color="'.$font_color.'">'.$teams[$i].'</font></td></tr>';   
+                }  ?>
+                        </table></font>   
+                        </div>
 	</div>
 	</div>
 	<div class="col-sm-2 sideMenu"></div>
