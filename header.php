@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<H1 align="center"><a href="listprod.jsp" style="text-decoration: none">Jersey World</a></H1>      
+<H1 align="center"><a href="listprod.php" style="text-decoration: none">Jersey World</a></H1>      
 <style>
 .navbar-default{
     /*background-color: #FFFFFF;*/
@@ -31,9 +31,9 @@ h1 {
       <ul class="nav navbar-nav">
         
       	
-        <li><a href="listprod.jsp">Home</a></li>
-        <li><a href="showcart.jsp">Shopping Cart</a></li>
-        <li><a href="order.jsp">Checkout</a></li> 
+        <li><a href="listprod.php">Home</a></li>
+        <li><a href="showcart.php">Shopping Cart</a></li>
+        <li><a href="order.php">Checkout</a></li> 
        
       </ul>
       <ul class="nav navbar-nav navbar-right">

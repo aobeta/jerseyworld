@@ -1,5 +1,6 @@
 <?php
 include 'database.php';
+session_start();
 // initializing color array
 $colors["basketball"] = "orange";
 $colors["football"] = "brown";
@@ -52,7 +53,7 @@ while ($data = mysqli_fetch_assoc($result)){
 <body>
 <div class="container-fluid twopiece">
 <div class="jumbotron">
-<H1 align="center"><a href="listprod.jsp" style="text-decoration: none">Jersey World</a></H1>      
+    <H1 align="center"><a href="listprod.php" style="text-decoration: none">Jersey World</a></H1>      
 <style>
 .navbar-default{
     /*background-color: #FFFFFF;*/
@@ -86,10 +87,10 @@ h1 {
   <div class="container-fluid">
      <div>
       <ul class="nav navbar-nav">
-      	<li><a href="Welcome.html">Welcome</a></li>
+          <li><a href="jerseyworld.php">Welcome</a></li>
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="showcart.jsp">Shopping Cart</a></li>
-        <li><a href="order.jsp">Checkout</a></li> 
+        <li><a href="showcart.php">Shopping Cart</a></li>
+        <li><a href="order.php">Checkout</a></li> 
        
       </ul>
       <ul class="nav navbar-nav navbar-right">
