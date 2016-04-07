@@ -19,12 +19,19 @@ if (isset($_GET["update"]) && isset($_GET["newqty"])){
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </HEAD>
-<BODY>
+<BODY onload="activate()">
 <?php include 'header.php';?>
 <script>
 function update(newid, newqty)
 {
-	window.location="showcart.php?update="+newid+"&newqty="+newqty;
+	if(newqty != 0){
+            window.location="showcart.php?update="+newid+"&newqty="+newqty;
+        }else{
+            window.location="showcart.php?delete="+newid;
+        }
+}
+function activate(){
+    document.getElementById("SC").setAttribute("class", "active");
 }
 </script>
 <div class="container-fluid">
@@ -41,7 +48,7 @@ if(!isset($_SESSION["productlist"]) || empty($_SESSION["productlist"])){
     
     echo "<TABLE class=\"table table-hover\"><thead><TR><TH>Id</TH><TH>Name</TH><th>   </th><TH> Quantity </TH>";
     echo "<TH> Price </TH><TH> Subtotal </TH><TH></TH><TH></TH></TR></thead>";
-    print_r($_SESSION["productlist"]);
+    
     $productlist = $_SESSION["productlist"];
     if(isset($delete)){
         unset($productlist[$delete]);
@@ -66,12 +73,13 @@ if(!isset($_SESSION["productlist"]) || empty($_SESSION["productlist"])){
       $total += $val["price"]*$val["quantity"];  
     }
     echo "<TR><TD COLSPAN=4 ALIGN=RIGHT><B>Order Total</B></TD><TD ALIGN=RIGHT>$".$total."</TD></TR>";
-    echo "<H2><A HREF=\"login.php\">Login</A></H2>";
+    echo "<H2><A class=\"btn btn-default\"HREF=\"login.php\">checkout > </A></H2>";
     $_SESSION["productlist"] = $productlist;
+    $_SESSION["total"] = $total;
 }
 
 ?>
-<H2><A HREF="listprod.php">Continue Shopping</A></H2>
+                       <H2><A class="btn btn-primary" HREF="listprod.php">Continue Shopping</A></H2>
 				</FORM>
 			</div>
 			<div class="col-sm-2"></div>

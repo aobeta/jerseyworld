@@ -68,18 +68,29 @@ h1 {
 				font-weight: 500;
 				line-height: 26.4px;
 			}
- #suggest{
-         border: 1px solid grey;
-         border-radius: 2%;
-         width: 52%;
-         height: 50%;
-         padding-left: 0;
-         position: relative;
-         left: 13.9%;
-         
-         z-index: 10;
+
+
+li {
+    list-style: none;
+    padding: 0;
+    left: -10px;
+    margin: 0;
 }
 
+li:hover{
+    background-color: lightsteelblue;
+}
+#theList{
+    margin: 10px;
+    border:1px solid grey;
+    padding: 0;
+    position: relative;
+    left: 105px;
+    width: 52%;
+    top: -9px;
+    border-radius: 2%;
+    display: none;
+}
 </style>
 
 </div>
@@ -87,10 +98,10 @@ h1 {
   <div class="container-fluid">
      <div>
       <ul class="nav navbar-nav">
-          <li><a href="jerseyworld.php">Welcome</a></li>
+          
         <li class="active"><a href="#">Home</a></li>
         <li><a href="showcart.php">Shopping Cart</a></li>
-        <li><a href="order.php">Checkout</a></li> 
+        <li><a href="login.php">Checkout</a></li> 
        
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -122,15 +133,16 @@ h1 {
 			  </select>
 			</div>
 			<div class="form-group">  
-			  <input class="form-control" type="text" name="playerName" placeholder="Search" size="50">
+                            <input class="form-control" type="text" name="playerName" placeholder="Search..." size="50" onkeypress="grabit(this.value)">
 			</div>     
 			  <input class="btn btn-primary"type="submit" name="submit" value="Search">
-                          <div id="suggest"> 
+                           
                               <ul id="theList">
-                                  <li>yo</li><br>
-                                  <li>yo yo</li><br>
-                                  <li>yo yo yo</li><br>
-                              </ul>
+                                  <li>&nbsp;&nbsp;&nbsp;yo</li><br>
+                                  <li>&nbsp;&nbsp;&nbsp;yo yo</li><br>
+                                  <li>&nbsp;&nbsp;&nbsp;yo yo yo</li><br>
+                                  <li>&nbsp;&nbsp;&nbsp;yo yo yo yo</li>
+                              </ul>    
                           </div>
 			</form>
                         

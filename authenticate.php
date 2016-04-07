@@ -14,6 +14,7 @@ if(mysqli_num_rows($resultset)==0)
    header("Locaton: login.php");
 }
 else{
-    header("Location: checkout.php");
+    header("Location: promotion.php");
 }
 
+?>

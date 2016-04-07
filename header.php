@@ -31,9 +31,9 @@ h1 {
       <ul class="nav navbar-nav">
         
       	
-        <li><a href="listprod.php">Home</a></li>
-        <li><a href="showcart.php">Shopping Cart</a></li>
-        <li><a href="order.php">Checkout</a></li> 
+          <li id="Home"><a href="listprod.php">Home</a></li>
+          <li id="SC"><a href="showcart.php">Shopping Cart</a></li>
+          <li id="Checkout"><a href="order.php">Checkout</a></li> 
        
       </ul>
       <ul class="nav navbar-nav navbar-right">

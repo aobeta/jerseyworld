@@ -17,7 +17,7 @@
 		<div class="col-sm-8">	
 		<h2>Login</h2>
 
-		<form  method="post" action="authenticate.jsp" role="form">
+		<form  method="post" action="authenticate.php" role="form">
 			<div class="row">
 				<div class="form-group col-lg-4">
 					
