@@ -11,7 +11,7 @@
  $sqlt = "INSERT INTO Checkout (final_total, date_of_purchase) VALUES(".$_SESSION['total'].", DATE() )";
  $result = mysqli_query($con, $sql);
 
-header("Location: OrderReview.php"); 
+header("Location: OrderMade.php"); 
 
 
 ?>

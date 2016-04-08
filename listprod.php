@@ -83,13 +83,16 @@ li:hover{
 #theList{
     margin: 10px;
     border:1px solid grey;
-    padding: 0;
+    padding-left:0;
     position: relative;
     left: 105px;
     width: 52%;
     top: -9px;
     border-radius: 2%;
-    display: none;
+    display: intitial;
+}
+.suggest{
+    padding-left: 1.5%;
 }
 </style>
 
@@ -133,15 +136,15 @@ li:hover{
 			  </select>
 			</div>
 			<div class="form-group">  
-                            <input class="form-control" type="text" name="playerName" placeholder="Search..." size="50" onkeypress="grabit(this.value)">
+                            <input class="form-control" type="text" name="playerName" placeholder="Search..." size="50" onkeypress="grabit(this.value)" onkeyup="grabit(this.value)">
 			</div>     
 			  <input class="btn btn-primary"type="submit" name="submit" value="Search">
                            
                               <ul id="theList">
-                                  <li>&nbsp;&nbsp;&nbsp;yo</li><br>
-                                  <li>&nbsp;&nbsp;&nbsp;yo yo</li><br>
-                                  <li>&nbsp;&nbsp;&nbsp;yo yo yo</li><br>
-                                  <li>&nbsp;&nbsp;&nbsp;yo yo yo yo</li>
+                                  <li class="suggest" id="s1"></li><br>
+                                  <li class="suggest" id="s2"></li><br>
+                                  <li class="suggest" id="s3"></li><br>
+                                  <li class="suggest" id="s4"></li>
                               </ul>    
                           </div>
 			</form>
