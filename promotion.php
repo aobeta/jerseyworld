@@ -9,6 +9,7 @@
 <body>
 <?php
 include 'header.php';
+session_start();
 ?>
 <div class="container">
 	<div class="row content">
@@ -17,16 +18,11 @@ include 'header.php';
                    
                
                 <?php
-                    if(isset($_SESSION['totalp']))
+                    if(isset($_SESSION['total']))
                     {
-                       $curTotal = 0.00; 
-                    }
-                    else
-                    {
-                        $curTotal = $_SESSION['totalp'];
-                        echo "Current Total Before Promotion:" .$curTotal;
-                    }
-                
+                       $curTotal = $_SESSION['total'];
+                       echo "<h4>Current Total Before Promotion: $".$curTotal."</h4>";
+                    }                             
                 
                 ?>
                     
@@ -40,7 +36,7 @@ include 'header.php';
 			<input class="form-control" type="text" name="pcode" size="20">
 			</div>
 		</div>
-			<input class="btn btn-default" type="submit" value="Apply Promotion">
+			<input class="btn btn-default" type="submit" value="submit">
 		
 		</form>
 

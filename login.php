@@ -17,7 +17,7 @@
 		<div class="col-sm-8">	
 		<h2>Login</h2>
 
-		<form  method="post" action="authenticate.php" role="form">
+		<form  method="GET" action="authenticate.php">
 			<div class="row">
 				<div class="form-group col-lg-4">
 					
@@ -33,7 +33,7 @@
 			<div class="checkbox">
 			  <label><input type="checkbox"> Remember me</label>
 		   </div>
-			<input class="btn btn-primary btn-lg"type="submit" value="Login">
+			<input class="btn btn-primary btn-lg"type="submit" value="submit">
 		</form>
 		</div>
 		<div class="col-sm-2"></div>
