@@ -83,13 +83,19 @@ li:hover{
 #theList{
     margin: 10px;
     border:1px solid grey;
-    padding: 0;
+    padding-left: 0;
     position: relative;
     left: 105px;
     width: 52%;
     top: -9px;
     border-radius: 2%;
     display: none;
+}
+p:hover{
+    background-color: lightblue;
+}
+p{
+    padding-left: 2%;
 }
 </style>
 
@@ -140,16 +146,14 @@ li:hover{
 			  </select>
 			</div>
 			<div class="form-group">  
-                            <input class="form-control" type="text" name="playerName" placeholder="Search..." size="50" onkeypress="grabit(this.value)">
+                            <input id="searchtext" class="form-control" type="text" name="playerName" placeholder="Search..." size="50"  onkeyup="grabit(this.value)">
 			</div>     
 			  <input class="btn btn-primary"type="submit" name="submit" value="Search">
                            
-                              <ul id="theList">
-                                  <li>&nbsp;&nbsp;&nbsp;yo</li><br>
-                                  <li>&nbsp;&nbsp;&nbsp;yo yo</li><br>
-                                  <li>&nbsp;&nbsp;&nbsp;yo yo yo</li><br>
-                                  <li>&nbsp;&nbsp;&nbsp;yo yo yo yo</li>
-                              </ul>    
+                          <div id="theList">
+                             
+                              
+                          </div>
                           </div>
 			</form>
                         

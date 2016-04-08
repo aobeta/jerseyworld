@@ -74,22 +74,22 @@ echo "<tr><td><font size = '5'><b>Total After Taxes & Discounts:</b></td></font>
 */
 //echo "<h1> </h1>";
 
-echo "<h4>Order completed</h4>";
-echo "<h4>Total amount comes to: $".$total."</h4>";
-echo "<h4>Your order reference number is: ".rand()."</h4>";
-echo "<h4>Customer Id: ".$userId."</h4>";
+echo "<h4 class=\"well\">Order completed</h4>";
+echo "<h4 class=\"well\">Total amount comes to: $".$total."</h4>";
+echo "<h4 class=\"well\">Your order reference number is: ".rand()."</h4>";
+echo "<h4 class=\"well\">Customer Id: ".$userId."</h4>";
 
 //echo "<h4>Review of Order</h4>";
 
-echo "<h4>Shipping to Customer: ".$custName."</h4>";
-echo "<h4>Customer Email: ".$email."</h4>";
+echo "<h4 class=\"well\">Shipping to Customer: ".$custName."</h4>";
+echo "<h4 class=\"well\">Customer Email: ".$email."</h4>";
 
 //ADD UNSET SESSION
 //session_unset();
 //unset($GLOBALS[_SESSION]["productlist"]);
 unset($_SESSION['productlist']);
 ?>
-<h2><a href="listprod.php">Back to Main Page</a></h2>
+    <h2><a class="btn btn-primary" href="listprod.php">Back to Main Page</a></h2>
 </div>
 </body>
 </html>

@@ -62,6 +62,7 @@ if(!isset($_SESSION["productlist"]) || empty($_SESSION["productlist"])){
     }
     $count = 0;
     $total = 0;
+    
     foreach($productlist as $key=>$val){
             $count++;
             echo "<tbody><TR><TD>".$val["id"]."</TD>";
