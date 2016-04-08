@@ -22,7 +22,12 @@ else{
     $_SESSION['uid'] = $userid;
     $_SESSION['firstname'] = $firstname;
     $_SESSION['email']=$email;
-    header("Location: promotion.php");
+    
+    if(isset($_SESSION['loginfrom'])){
+        header("Location: listprod.php");
+    }else{
+        header("Location: showcart.php");
+    }
 }
 
 ?>

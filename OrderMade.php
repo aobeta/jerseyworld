@@ -29,7 +29,7 @@
 </style>
 <?php
 include 'header.php';
-session_start();
+//session_start();
 $custName = $_SESSION['firstname'];
 $userId = $_SESSION['uid'];
 $orderId = $_SESSION['orderId'];

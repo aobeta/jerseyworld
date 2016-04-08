@@ -10,7 +10,18 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
-   <?php include 'header.php';?>
+   <?php include 'header.php';
+        //session_start();
+        if(isset($_SESSION['firstname'])) {
+            header("Location: promotion.php");
+        }
+        
+        
+        if(isset($_GET['h'])) {
+            $_SESSION['loginfrom'] = "home";
+        }
+   
+   ?>
 <div class="container-fluid ">    
   <div class="row content">
 		<div class="col-sm-2"></div>

@@ -9,7 +9,7 @@
 <body>
 <?php
 include 'header.php';
-session_start();
+//session_start();
 ?>
 <div class="container">
 	<div class="row content">

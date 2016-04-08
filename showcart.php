@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 if (isset($_GET["delete"])){
     $delete = $_GET["delete"];
 }
@@ -41,6 +41,10 @@ function activate(){
 				<FORM name="form1">
 <?php 
 if(!isset($_SESSION["productlist"]) || empty($_SESSION["productlist"])){
+    /*if(isset($_SESSION["logintocart"])){
+        
+        header("Location: listprod.php");
+    }*/
     echo "<H1>Your shopping cart is empty!</H1>";
     
 }  else {

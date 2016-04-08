@@ -53,7 +53,7 @@ while ($data = mysqli_fetch_assoc($result)){
 <body>
 <div class="container-fluid twopiece">
 <div class="jumbotron">
-    <H1 align="center"><a href="listprod.php" style="text-decoration: none">Jersey World</a></H1>      
+    <H1 align="center"><a href="jerseyworld.php" style="text-decoration: none">Jersey World</a></H1>      
 <style>
 .navbar-default{
     /*background-color: #FFFFFF;*/
@@ -102,7 +102,14 @@ li:hover{
         <li class="active"><a href="#">Home</a></li>
         <li><a href="showcart.php">Shopping Cart</a></li>
         <li><a href="login.php">Checkout</a></li> 
-       
+        <?php 
+          
+          if(isset($_SESSION['firstname'])){
+              
+              echo "<li id=\"Checkout\"><a href=\"logout.php\">Logout</a></li>";
+          }
+          
+          ?>
       </ul>
       <ul class="nav navbar-nav navbar-right">
                 </ul>
