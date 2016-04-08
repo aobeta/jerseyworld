@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <div class="container-fluid twopiece">
 <div class="jumbotron">
 
@@ -7,7 +8,7 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<H1 align="center"><a href="listprod.php" style="text-decoration: none">Jersey World</a></H1>      
+<H1 align="center"><a href="jerseyworld.php" style="text-decoration: none">Jersey World</a></H1>      
 <style>
 .navbar-default{
     /*background-color: #FFFFFF;*/
@@ -33,7 +34,15 @@ h1 {
       	
           <li id="Home"><a href="listprod.php">Home</a></li>
           <li id="SC"><a href="showcart.php">Shopping Cart</a></li>
-          <li id="Checkout"><a href="order.php">Checkout</a></li> 
+          <li id="Checkout"><a href="order.php">Checkout</a></li>
+          <?php 
+          
+          if(isset($_SESSION['firstname'])){
+              
+              echo "<li id=\"Checkout\"><a href=\"logout.php\">Logout</a></li>";
+          }
+          
+          ?>
        
       </ul>
       <ul class="nav navbar-nav navbar-right">

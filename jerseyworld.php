@@ -12,6 +12,7 @@
 	<style type="text/css">
 		h1{color:red}
 	</style>
+        <?php session_start(); ?>
 </head>
 <body>
 	
@@ -63,8 +64,22 @@
 			<br>
 			<br>
 			<div class="btn-group">
-				<a class="btn btn-info bt-lg" href="Login.php"><span class="glyphicon glyphicon-log-in"></span>  LOGIN</a>
-                                <a class="btn btn-info bt-lg" href="signup.php">SIGN UP&nbsp;&nbsp;<span class="glyphicon glyphicon-user"></span></a>
+                                <?php
+                                    
+                                if(isset($_SESSION['firstname'])){
+                                    
+                                    $fname = $_SESSION['firstname'];
+                                    echo "<a class=\"btn btn-info bt-lg\" href=\"\">  Hello ".$fname."</a>";
+                                    echo "<a class=\"btn btn-info bt-lg\" href=\"logout.php\"><span class=\"glyphicon glyphicon-log-in\"></span>  LOGOUT</a>";
+                                    
+                                }else {
+                                    
+                                    echo "<a class=\"btn btn-info bt-lg\" href=\"login.php?h=t\"><span class=\"glyphicon glyphicon-log-in\"></span>  LOGIN</a>";
+                                    echo "<a class=\"btn btn-info bt-lg\" href=\"signup.php\">SIGN UP&nbsp;&nbsp;<span class=\"glyphicon glyphicon-user\"></span></a>";
+                                }        
+                                        
+                                 ?>       
+                                
 			</div>
 		</div>
             <div class="row-content">

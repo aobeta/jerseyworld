@@ -1,5 +1,4 @@
 <?php
-
 //Get promotion id
 //$pcode = $_SESSION['pcode'];
 // Get total
@@ -10,8 +9,7 @@
  $con = mysqli_connect("159.203.28.124", "Jersey", "letmein", "testing");
  $sqlt = "INSERT INTO Checkout (final_total, date_of_purchase) VALUES(".$_SESSION['total'].", DATE() )";
  $result = mysqli_query($con, $sql);
-
+ 
+ 
 header("Location: OrderMade.php"); 
-
-
 ?>
