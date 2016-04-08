@@ -2,18 +2,33 @@
 
 function grabit(val){
     
-    $.ajax({
-            type:"POST",
-            data: { input : val },
-            url: "suggest.php",
-            dataType : "json",
-            success: function(data){
-                var text = JSON.parse(data);
-               
-                for(var i =0; i > text.length; i++){
-                    document.getElementById("s1").innerHTML = text[i];
-                }
+    //$("#theList").text(val);
+    if(val == ""){
+            document.getElementById("theList").style.display = "none";
+        }else{
+             document.getElementById("theList").style.display = "block";
+             $.ajax({
+                type:"POST",
+                data: { input : val },
+                url: "suggest.php",
+
+                success: function(data){
+                    if(data == "")
+                    {
+                        $("#theList").css("display", "none");
+                    }else{
+                        $("#theList").css("display", "block");
+                        $("#theList").html(data);
+                    }
             }
             
         });
+        }
+    
+       
+        
+}
+
+function displaythis(p){
+    document.getElementById("searchtext").value = p.innerHTML;
 }
