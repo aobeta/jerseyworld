@@ -31,4 +31,5 @@ function grabit(val){
 
 function displaythis(p){
     document.getElementById("searchtext").value = p.innerHTML;
+    document.getElementById("theList").style.display = "none";
 }

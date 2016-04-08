@@ -12,6 +12,7 @@ include "header.php";
 <title>Sign Up</title>
 <link href="bootstrap.min.css" rel="stylesheet">
 </head>
+<body>
 <style>
     
     #aotr {
@@ -19,31 +20,34 @@ include "header.php";
     }
     
 </style>
-
-<div id="aotr">
-<h2>Enter your information to sign up:</h2>
+<div class="col-sm-3"></div> 
+<div id="aotr" class="col-sm-6">
+<h3>Enter your information to sign up:</h3>
 
 <form action="createaccount.php" method="POST">
 	First Name:<br>
-	<input type="text" name="first_name">
+        <input class="form-control" type="text" name="first_name">
 	<br>
 	Last Name:<br>
-	<input type="text" name="last_name">
+	<input class="form-control" type="text" name="last_name">
 	<br>
 	Email:<br>
-	<input type="text" name="email">
+	<input class="form-control" type="text" name="email">
 	<br>
 	Address:<br>
-	<input type="text" name="street_address">
+	<input class="form-control" type="text" name="street_address">
 	<br>
 	City:<br>
-	<input type="text" name="city">
+	<input class="form-control" type="text" name="city">
 	<br>
 	Province:<br>
-	<input type="text" name="province">
+	<input class="form-control" type="text" name="province">
 	<br>
 	Password:<br>
-	<input type="text" name="pass">
+	<input class="form-control" type="text" name="pass">
 	<br>
-  	<input type="submit" value="Submit">
+  	<input class="btn btn-primary" type="submit" value="Submit">
   </form>
+<div class="col-sm-3"></div> 
+</body>
+</html>
