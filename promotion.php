@@ -21,7 +21,7 @@ include 'header.php';
                     if(isset($_SESSION['total']))
                     {
                        $curTotal = $_SESSION['total'];
-                       echo "<h4>Current Total Before Promotion: $".$curTotal."</h4>";
+                       echo "<h4 class=\"well\">Current Total Before Promotion: $".$curTotal."</h4>";
                     }                             
                 
                 ?>
@@ -40,7 +40,7 @@ include 'header.php';
 		
 		</form>
 
-		<h2><a href="applyPromotion.php?pcode=0">Skip</a></h2>
+                    <h2><a class="btn btn-success"href="applyPromotion.php?pcode=0">Skip</a></h2>
 		
 		</div>
 	</div>
